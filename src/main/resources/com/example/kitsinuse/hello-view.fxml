@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.kitsinuse.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.GridPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<GridPane fx:id="gridPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          hgap="10" vgap="10" fx:controller="com.example.kitsinuse.HelloController">
+    <Button text="New Record" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Button text="Pending QC's" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    <Button text="Failed QC's" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Button text="Export Data By Lot Number" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Button text="Export Data By In Use Date" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Button text="Close Program" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+</GridPane>
