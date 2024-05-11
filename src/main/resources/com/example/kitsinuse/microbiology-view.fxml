@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
-
-
 <?import javafx.scene.control.Label?>
-<VBox alignment="center" spacing="20" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitsinuse.MicrobiologyController">
+<?import javafx.scene.control.Button?>
+
+<VBox stylesheets="@style.css" alignment="center" spacing="20" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitsinuse.MicrobiologyController">
     <Label text="Microbiology" style="-fx-font-size: 24px; -fx-text-alignment: center;"/>
 
     <GridPane fx:id="microGridPane" hgap="40" vgap="40" alignment="center">
         <!-- Placeholder for buttons to be added by controller -->
     </GridPane>
+
 </VBox>
