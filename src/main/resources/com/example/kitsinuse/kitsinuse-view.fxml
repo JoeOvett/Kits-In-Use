@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox alignment="center" spacing="20" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitsinuse.KitsInUseController">
+    <Label text="Welcome to JavaFX Application!" style="-fx-font-size: 24px; -fx-text-alignment: center;"/>
+    <GridPane fx:id="rootGridPane" hgap="40" vgap="40" alignment="center">
+        <!-- GridPane will be populated by the controller -->
+    </GridPane>
+</VBox>
