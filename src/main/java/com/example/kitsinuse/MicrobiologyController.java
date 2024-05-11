@@ -9,14 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.geometry.Insets;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
@@ -35,23 +27,28 @@ public class MicrobiologyController {
         newKitButton.getStyleClass().add("MicroButton");
         microGridPane.add(newKitButton, 0, 0);
 
-        addStyledButton("New Kit", "/com/example/kitsinuse/images/qc.png", 1, 0);
-        addStyledButton("Pending QCs", "/com/example/kitsinuse/images/hospital.png", 2, 0);
-        addStyledButton("Kits Expired", "/com/example/kitsinuse/images/hospital.png", 0, 1);
-        addStyledButton("Kits Discarded", "/com/example/kitsinuse/images/hospital.png", 1, 1);
-        addStyledButton("Go Back", "/com/example/kitsinuse/images/hospital.png", 2, 1);
+        addStyledButton("Pending QCs", "/com/example/kitsinuse/images/qc.png", 1, 0);
+        addStyledButton("QC Records", "/com/example/kitsinuse/images/cert.png", 2, 0);
+        addStyledButton("Kits Used", "/com/example/kitsinuse/images/report.png", 0, 1);
+        Button homeButton = addStyledButton("Home", "/com/example/kitsinuse/images/home.png", 1, 1);
+        homeButton.setOnAction(this::loadKitsInUseView);
+        Button exitButton = addStyledButton("Exit", "/com/example/kitsinuse/images/exit.png", 2, 1);
+        exitButton.setOnAction(e -> System.exit(0));
 
     }
-    private void addStyledButton(String text, String imagePath, int column, int row) {
+    private Button addStyledButton(String text, String imagePath, int column, int row) {
         Button button = createButton(text, imagePath);
         button.getStyleClass().add("MicroButton");
         microGridPane.add(button, column, row);
+        button.setOnAction(this::loadMicrobiologyView);
+        return button;
     }
     private void loadKitsInUseView(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/kitsinuse/kitsinuse-view.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root, WIDTH, HEIGHT);            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, WIDTH, HEIGHT);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,7 +59,7 @@ public class MicrobiologyController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/kitsinuse/kitsinuse-view.fxml"));
             Parent root = loader.load();
-            Scene scene = new Scene(root);
+            Scene scene = new Scene(root, WIDTH, HEIGHT);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
         } catch (IOException e) {
@@ -80,8 +77,8 @@ public class MicrobiologyController {
         // Load and set the image if provided
         ImageView imageView = loadImage(imagePath); // Pass imagePath to loadImage
         if (imageView != null) {
-            imageView.setFitHeight(80);  // Set image size smaller than the button for aesthetic
-            imageView.setFitWidth(80);
+            imageView.setFitHeight(160);  // Set image size smaller than the button for aesthetic
+            imageView.setFitWidth(160);
             button.setGraphic(imageView);
         }
         button.setContentDisplay(javafx.scene.control.ContentDisplay.TOP);
