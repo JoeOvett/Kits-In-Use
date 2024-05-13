@@ -26,6 +26,7 @@ public class MicrobiologyController {
         Button newKitButton = createButton("New Kit", "/com/example/kitsinuse/images/note.png");
         newKitButton.getStyleClass().add("MicroButton");
         microGridPane.add(newKitButton, 0, 0);
+        newKitButton.setOnAction(this::loadNewKitView); // Set action to load New Kit view
 
         addStyledButton("Pending QCs", "/com/example/kitsinuse/images/qc.png", 1, 0);
         addStyledButton("QC Records", "/com/example/kitsinuse/images/cert.png", 2, 0);
@@ -34,7 +35,17 @@ public class MicrobiologyController {
         homeButton.setOnAction(this::loadKitsInUseView);
         Button exitButton = addStyledButton("Exit", "/com/example/kitsinuse/images/exit.png", 2, 1);
         exitButton.setOnAction(e -> System.exit(0));
-
+    }
+    private void loadNewKitView(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/kitsinuse/newkit-view.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root, WIDTH, HEIGHT);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private Button addStyledButton(String text, String imagePath, int column, int row) {
         Button button = createButton(text, imagePath);
@@ -74,7 +85,7 @@ public class MicrobiologyController {
 
         // Set the gradient as background with rounded corners
 
-        // Load and set the image if provided
+        // Load and set the image & size
         ImageView imageView = loadImage(imagePath); // Pass imagePath to loadImage
         if (imageView != null) {
             imageView.setFitHeight(160);  // Set image size smaller than the button for aesthetic
