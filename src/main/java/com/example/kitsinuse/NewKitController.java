@@ -6,34 +6,39 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 public class NewKitController {
+    @FXML
     public VBox mainVBox;
+    @FXML
     public Label titleLabel;
+    @FXML
     public GridPane formGridPane;
     @FXML
     public TextField enteredByField;
     @FXML
     private TextField barcodeField;
+    @FXML
     public TextField kitDescriptionField;
+    @FXML
     public TextField receivedDateField;
-
+    @FXML
     public TextField lotNumberField;
+    @FXML
     public TextField expirationDateField;
-    public ComboBox supplierBox;
-    public ComboBox qualityControlBox;
+    @FXML
+    public ComboBox<String> supplierBox;
+    @FXML
+    public ComboBox<String> qualityControlBox;
+    @FXML
     public TextField inUseDateField;
-
 
     @FXML
     private ComboBox<String> kitDescriptionBox;
-    
 
     public NewKitController() {
     }
 
     public NewKitController(GridPane newKitGridPane) {
     }
-
-
 
     @FXML
     private void handleSaveAction() {
@@ -47,6 +52,12 @@ public class NewKitController {
         enteredByField.clear();
         barcodeField.clear();
         kitDescriptionBox.getSelectionModel().clearSelection();
+        receivedDateField.clear();
+        lotNumberField.clear();
+        expirationDateField.clear();
+        supplierBox.getSelectionModel().clearSelection();
+        qualityControlBox.getSelectionModel().clearSelection();
+        inUseDateField.clear();
     }
 
     @FXML

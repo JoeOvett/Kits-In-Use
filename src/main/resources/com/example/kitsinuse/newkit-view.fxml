@@ -6,29 +6,29 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Button?>
 
-<VBox stylesheets="@style.css" alignment="center" spacing="20" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitsinuse.NewKitController">
+<VBox stylesheets="@../../../style.css" alignment="center" spacing="20" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kitsinuse.NewKitController" styleClass="main-vbox">
     <Label fx:id="titleLabel" text="Enter New Kit Details" styleClass="header-label"/>
-    <GridPane fx:id="formGridPane" styleClass="grid-pane" alignment="CENTER" hgap="10" vgap="10">
+    <GridPane fx:id="formGridPane" styleClass="form-grid-pane" alignment="CENTER" hgap="10" vgap="10" maxWidth="500">
         <Label text="Entered By:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <TextField fx:id="enteredByField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
         <Label text="Barcode:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
         <TextField fx:id="barcodeField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-        <Label text="Kit Description" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label text="Kit Description:" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
         <TextField fx:id="kitDescriptionField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-        <Label text="Received Date" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label text="Received Date:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
         <TextField fx:id="receivedDateField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-        <Label text="Lot Number" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label text="Lot Number:" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
         <TextField fx:id="lotNumberField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-        <Label text="Expiration Date" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label text="Expiration Date:" styleClass="form-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
         <TextField fx:id="expirationDateField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
-        <Label text="Supplier" styleClass="form-label" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Label text="Supplier:" styleClass="form-label" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
         <ComboBox fx:id="supplierBox" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
-        <Label text="Quality Control" styleClass="form-label" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <Label text="Quality Control:" styleClass="form-label" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
         <ComboBox fx:id="qualityControlBox" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
-        <Label text="In Use Date" styleClass="form-label" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <Label text="In Use Date:" styleClass="form-label" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
         <TextField fx:id="inUseDateField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
-        <Button text="Save" onAction="#handleSaveAction" GridPane.rowIndex="9" GridPane.columnIndex="0" styleClass="FormButton"/>
-        <Button text="Clear All Fields" onAction="#handleClearAction" GridPane.rowIndex="9" GridPane.columnIndex="1" styleClass="FormButton"/>
-        <Button text="Exit" onAction="#handleExitAction" GridPane.rowIndex="9" GridPane.columnIndex="2" styleClass="FormButton"/>
+        <Button text="Save" onAction="#handleSaveAction" GridPane.rowIndex="9" GridPane.columnIndex="0" styleClass="form-button"/>
+        <Button text="Clear All Fields" onAction="#handleClearAction" GridPane.rowIndex="9" GridPane.columnIndex="1" styleClass="form-button"/>
+        <Button text="Exit" onAction="#handleExitAction" GridPane.rowIndex="9" GridPane.columnIndex="2" styleClass="form-button"/>
     </GridPane>
 </VBox>
