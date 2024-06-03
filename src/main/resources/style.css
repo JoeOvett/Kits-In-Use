@@ -15,7 +15,7 @@
 
 .LandingButton { /* Style for large menu buttons */
     -fx-padding: 40 40 40 40;
-    -fx-background-color: linear-gradient(to bottom, #FF7EB3, #05ffa1);
+    -fx-background-color: linear-gradient(to bottom, #41B6E6, #005EB8);
     -fx-text-fill: white;
     -fx-font-size: 24;
     -fx-font-weight: bold;
